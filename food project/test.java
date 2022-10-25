@@ -24,17 +24,16 @@ public class test{
                 mch = Integer.parseInt(mchoice);
                     switch(mch){
                         case 1:
-                                while(ch != 5){
+                                
                                     try{
                                         choice = JOptionPane.showInputDialog(null,
                                                 "----------------------------------------------------------------\n" +
                                                 "                              Menu                              \n" +
                                                 "----------------------------------------------------------------\n" +
-                                                "1. narrow rice noodles\n" + //เส้นเล็ก
-                                                "2. wide rice noodles\n" +   //เส้นใหญ่
-                                                "3. yellow Noodles\n" +      //เส้นหมี่เหลือง
-                                                "4. white rice noodles\n" +  //เส้นหมี่ขาว
-                                                "5. Back\n"+
+                                                "1. narrow rice noodles\n" +
+                                                "2. wide rice noodles\n" +  
+                                                "3. yellow Noodles\n" +    
+                                                "4. white rice noodles\n" +
                                                 "----------------------------------------------------------------\n");
                                         
                                         ch = Integer.parseInt(choice);
@@ -133,7 +132,7 @@ public class test{
                                     }catch(Exception e){
                                         JOptionPane.showMessageDialog(null,e.getMessage());
                                     }
-                                }
+                                
                                 break;
                         case 2:
                                 nd.clear();
@@ -147,60 +146,63 @@ public class test{
                                 break;
 
                         case 4:
-                                for (String i : nd.values()) {
-                                    System.out.println(i);
+                                for (String i: nd.keySet()) {
+                                    String key = i.toString();
+                                    String value = nd.get(i).toString();
+                                    System.out.println("["+key+"]" + " " + value);
                                 }
+                                // for (String i : nd.values()) {
+                                //     System.out.println(i);
+                                // }
                                 break;
 
                         case 5:
-                                while(rm != 5){
-                                    try{
-                                        rmchoice = JOptionPane.showInputDialog(null,
-                                                "----------------------------------------------------------------\n" +
-                                                "                     Order you want to remove          \n" +
-                                                "----------------------------------------------------------------\n" +
-                                                "1. narrow rice noodles\n" + //เส้นเล็ก
-                                                "2. wide rice noodles\n" +   //เส้นใหญ่
-                                                "3. yellow Noodles\n" +      //เส้นหมี่เหลือง
-                                                "4. white rice noodles\n" +  //เส้นหมี่ขาว
-                                                "5. Back\n"+
-                                                "----------------------------------------------------------------\n");
+                                try{
+                                    rmchoice = JOptionPane.showInputDialog(null,
+                                            "----------------------------------------------------------------\n" +
+                                            "                     Order you want to remove          \n" +
+                                            "----------------------------------------------------------------\n" +
+                                            "1. narrow rice noodles\n" +
+                                            "2. wide rice noodles\n" +  
+                                            "3. yellow Noodles\n" +    
+                                            "4. white rice noodles\n" +
+                                            "----------------------------------------------------------------\n");
                                         
-                                        rm = Integer.parseInt(rmchoice);
-                                        switch (rm) {
-                                            case 1:
-                                                nd.remove("001");
-                                                break;
-                                            case 2:
-                                                nd.remove("002");
-                                                break;
-                                            case 3:
-                                                nd.remove("003");
-                                                break;
-                                            case 4:
-                                                nd.remove("004");
-                                                break;
-                                            case 5:
-                                                break;
-                                            default:
-                                                JOptionPane.showMessageDialog(null,"Invalid choice","Error",JOptionPane.ERROR_MESSAGE);
-                                                break;
-                                        }   
-                                    }catch(Exception e){
-                                        JOptionPane.showMessageDialog(null,e.getMessage());
-                                    }
+                                    rm = Integer.parseInt(rmchoice);
+                                    switch (rm) {
+                                        case 1:
+                                            nd.remove("001");
+                                            break;
+                                        case 2:
+                                            nd.remove("002");
+                                            break;
+                                        case 3:
+                                            nd.remove("003");
+                                            break;
+                                        case 4:
+                                            nd.remove("004");
+                                            break;
+                                        case 5:
+                                            break;
+                                        default:
+                                            JOptionPane.showMessageDialog(null,"Invalid choice","Error",JOptionPane.ERROR_MESSAGE);
+                                            break;
+                                    }   
+                                }catch(Exception e){
+                                    JOptionPane.showMessageDialog(null,e.getMessage());
                                 }
+
                                 break;  
 
                         case 6:
-                                JOptionPane.showMessageDialog(null,"Program is terminated");
+                                JOptionPane.showMessageDialog(null,"Enjot your food");
                                 break;
                     }
             }catch(Exception e){
                 JOptionPane.showMessageDialog(null,e.getMessage());
             }
     }
-        
+
     }
 
     public void getBudget(int budget){
