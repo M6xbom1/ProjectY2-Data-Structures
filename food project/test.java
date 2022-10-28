@@ -1,15 +1,18 @@
 import javax.swing.JOptionPane;
 import java.util.HashMap;
 
-public class test{
+public class Test{
     public static void main(String[] args) throws Exception{
 
         int ch=0,ch2=0,mch=0,rm=0;
         String choice,choice2,mchoice,rmchoice;
-        int budget;
+        int budget=0;
+
         HashMap<String, String> nd = new HashMap<String, String>();
+        Money money = new Money();
 
         budget = Integer.parseInt(JOptionPane.showInputDialog("Enter your budget"));
+        
         while(mch != 6){
             try{
                 mchoice = JOptionPane.showInputDialog(null,
