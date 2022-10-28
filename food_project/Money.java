@@ -1,8 +1,15 @@
+package food_project;
+
 public class Money {
+
     private int bath;
 
+    public Money(int bath) {
+        this.bath = bath;
+    }
+
     public Money() {
-        bath = 0; 
+        this(0);
     }
 
     public void setBath(int newBudget) throws Exception {
@@ -13,7 +20,7 @@ public class Money {
         }
     }
 
-    public int getBath() {
+    public Object getBath() {
         return bath;
     }
 
@@ -21,11 +28,11 @@ public class Money {
         return bath == 0;
     }
 
-    public void add(Double bath) {
+    public void add(int bath) {
         this.bath += bath;
     }
 
-    public void remove(Double bath) {
+    public void remove(int bath) {
         this.bath -= bath;
     }
 
