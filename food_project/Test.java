@@ -1,6 +1,7 @@
 package food_project;
 
 import javax.swing.JOptionPane;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Test{
@@ -9,14 +10,14 @@ public class Test{
         int ch=0,ch2=0,mch=0,rm=0;
         String choice,choice2,mchoice,rmchoice;
         int budget=0;
-        
-        
 
+        ArrayList<String> menu = new ArrayList<String>();
         HashMap<String, String> nd = new HashMap<String, String>();
         Money money = new Money();
 
         budget = Integer.parseInt(JOptionPane.showInputDialog("Enter your budget"));
         money.setBath(budget);
+        money.getBath();
         
         while(mch != 6){
             try{
@@ -173,6 +174,7 @@ public class Test{
                                 break;
                         case 2:
                                 nd.clear();
+                                money.setBath(budget);
                                 JOptionPane.showMessageDialog(null,"All items are removed");
                                 break;
                         
@@ -186,7 +188,9 @@ public class Test{
                                 for (String i: nd.keySet()) {
                                     String key = i.toString();
                                     String value = nd.get(i).toString();
-                                    System.out.println("["+key+"]" + " " + value);
+                                    System.out.println("["+key+"]" + " " + value + " " + money.getBath());
+                                    int a = budget - (int)money.getBath();
+                                    System.out.println("Total " + a);
                                 }
                                 // for (String i : nd.values()) {
                                 //     System.out.println(i);
@@ -209,15 +213,19 @@ public class Test{
                                     switch (rm) {
                                         case 1:
                                             nd.remove("001");
+                                            money.add(40);
                                             break;
                                         case 2:
                                             nd.remove("002");
+                                            money.add(40);
                                             break;
                                         case 3:
                                             nd.remove("003");
+                                            money.add(40);
                                             break;
                                         case 4:
                                             nd.remove("004");
+                                            money.add(40);
                                             break;
                                         case 5:
                                             break;
