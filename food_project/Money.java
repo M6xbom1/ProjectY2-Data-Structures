@@ -25,11 +25,11 @@ public class Money {
     }
 
     public boolean isEmpty() {
-        return bath == 0;
+        return bath <= 0;
     }
 
-    public void add(int bath) {
-        this.bath += bath;
+    public int add(int bath) {
+        return this.bath += bath;
     }
 
     public void remove(int bath) {
