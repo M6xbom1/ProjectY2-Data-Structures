@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 import java.util.HashMap;
 // import java.util.ArrayList;
 
-public class Test{
+public class DriverTest{
     public static void main(String[] args) throws Exception{
 
         int ch=0,ch2=0,mch=0,rm=0;
