@@ -3,39 +3,38 @@ package food_project;
 import javax.swing.JOptionPane;
 import java.util.HashMap;
 // import java.util.ArrayList;
+import java.util.Map;
 
+//key = 1:1:1 = ลําดับเมนู:size(Normal=0,Big=1):จํานวนชาม
 public class DriverTest{
     public static void main(String[] args) throws Exception{
 
-        int ch=0,ch2=0,mch=0,rm=0;
-        String choice,choice2,mchoice,rmchoice;
+        int ch=0,ch2=0,mch=0,rm=0,bowls=0;
         int budget=0;
+        int count=0;
 
         // ArrayList<String> menu = new ArrayList<String>();
-        HashMap<String, String> nd = new HashMap<String, String>();
+        HashMap<Integer, String> nd = new HashMap<Integer, String>();
         Money money = new Money();
 
         budget = Integer.parseInt(JOptionPane.showInputDialog("Enter your budget"));
         money.setBath(budget);
         System.out.println("Your money now: "+money.getBath());
         
-        while(mch != 6){
+        while(mch != 5){
             try{
-                mchoice = JOptionPane.showInputDialog(null,
+                mch = Integer.parseInt(JOptionPane.showInputDialog(null,
                 "Choose the Option you want to perform\n"+
-                "1. Add an item\n"+
+                "1. Add an Order\n"+
                 "2. Clear Order\n"+
-                "3. New Budget\n"+
-                "4. Show All Item\n"+
-                "5. Remove item\n"+
-                "6. Exit");
-                
-                mch = Integer.parseInt(mchoice);
+                "3. Set new Budget\n"+
+                "4. Show Order\n"+
+                "5. Exit"));
                     switch(mch){
                         case 1:
                                 
                                     try{
-                                        choice = JOptionPane.showInputDialog(null,
+                                        ch = Integer.parseInt(JOptionPane.showInputDialog(null,
                                                 "----------------------------------------------------------------\n" +
                                                 "                              Menu                              \n" +
                                                 "----------------------------------------------------------------\n" +
@@ -43,9 +42,8 @@ public class DriverTest{
                                                 "2. Wide rice noodles\n" +  
                                                 "3. Yellow Noodles\n" +    
                                                 "4. White rice noodles\n" +
-                                                "----------------------------------------------------------------\n");
+                                                "----------------------------------------------------------------\n"));
                                         
-                                        ch = Integer.parseInt(choice);
                                         int m = (int) money.getBath();
                                         switch (ch) {
                                             case 1:
@@ -54,20 +52,26 @@ public class DriverTest{
                                                     break;
                                                 }else{
                                                     try{
-                                                        choice2 = JOptionPane.showInputDialog(null, 
+                                                        ch2 = Integer.parseInt(JOptionPane.showInputDialog(null, 
                                                                 "1.Normal size\n" +
-                                                                "2.Big size\n");
-                                                        ch2 = Integer.parseInt(choice2);
+                                                                "2.Big size\n"));    
+                                                        bowls = Integer.parseInt(JOptionPane.showInputDialog(null,"How many bowls of noodles do you want?"));                                                 
                                                         switch(ch2){
                                                             case 1:
-                                                                nd.put("001", "Narrow rice noodles Normal size :40 bath");
-                                                                money.remove(40);
-                                                                JOptionPane.showMessageDialog(null, "Added narrow rice noodles Normal size 40 bath");
+                                                                for(int i=0;bowls>i;i++){
+                                                                    nd.put(101+i, "Narrow rice noodles Normal size");
+                                                                    count++;
+                                                                }
+                                                                money.remove(40*bowls);
+                                                                JOptionPane.showMessageDialog(null, "Added narrow rice noodles Normal size "+bowls+" bowls");
                                                                 break;
                                                             case 2:
-                                                                nd.put("101", "Narrow rice noodles Big size :50 bath");
-                                                                money.remove(50);
-                                                                JOptionPane.showMessageDialog(null, "Added narrow rice noodles Big size 50 bath");
+                                                                for(int i=0;bowls>i;i++){
+                                                                    nd.put(111+i, "Narrow rice noodles Big size");
+                                                                    count++;
+                                                                }
+                                                                money.remove(50*bowls);
+                                                                JOptionPane.showMessageDialog(null, "Added narrow rice noodles Big size "+bowls+" bowls");
                                                                 break;
                                                         }
                                                     }catch (Exception e){
@@ -85,20 +89,26 @@ public class DriverTest{
                                                     break;
                                                 }else{
                                                     try{
-                                                        choice2 = JOptionPane.showInputDialog(null, 
+                                                        ch2 = Integer.parseInt(JOptionPane.showInputDialog(null, 
                                                                 "1.Normal size\n" +
-                                                                "2.Big size\n");
-                                                        ch2 = Integer.parseInt(choice2);
+                                                                "2.Big size\n"));    
+                                                        bowls = Integer.parseInt(JOptionPane.showInputDialog(null,"How many bowls of noodles do you want?"));                                                 
                                                         switch(ch2){
                                                             case 1:
-                                                                nd.put("002", "Wide rice noodles Normal size :40 bath");
-                                                                money.remove(40);
-                                                                JOptionPane.showMessageDialog(null, "Added Wide rice noodles Normal size 40 bath");
+                                                                for(int i=0;bowls>i;i++){
+                                                                    nd.put(201+i, "Wide rice noodles Normal size");
+                                                                    count++;
+                                                                }
+                                                                money.remove(40*bowls);
+                                                                JOptionPane.showMessageDialog(null, "Added Wide rice noodles Normal size "+bowls+" bowls");
                                                                 break;
                                                             case 2:
-                                                                nd.put("102", "Wide rice noodles Big size :50 bath");
-                                                                money.remove(50);
-                                                                JOptionPane.showMessageDialog(null, "Added Wide rice noodles Big size 50 bath");
+                                                                for(int i=0;bowls>i;i++){
+                                                                    nd.put(211+i, "Wide rice noodles Big size");
+                                                                    count++;
+                                                                }
+                                                                money.remove(50*bowls);
+                                                                JOptionPane.showMessageDialog(null, "Added Wide rice noodles Big size "+bowls+" bowls");
                                                                 break;
                                                         }
                                                     }catch (Exception e){
@@ -106,6 +116,7 @@ public class DriverTest{
                                                     }
                                                 }
                                                 System.out.println("Your money now: "+money.getBath());
+                                                
                                                 break;
                         
                         
@@ -115,20 +126,26 @@ public class DriverTest{
                                                     break;
                                                 }else{
                                                     try{
-                                                        choice2 = JOptionPane.showInputDialog(null, 
+                                                        ch2 = Integer.parseInt(JOptionPane.showInputDialog(null, 
                                                                 "1.Normal size\n" +
-                                                                "2.Big size\n");
-                                                        ch2 = Integer.parseInt(choice2);
+                                                                "2.Big size\n"));    
+                                                        bowls = Integer.parseInt(JOptionPane.showInputDialog(null,"How many bowls of noodles do you want?"));                                                 
                                                         switch(ch2){
                                                             case 1:
-                                                                nd.put("003", "Yellow Noodles Normal size :40 bath");
-                                                                money.remove(40);
-                                                                JOptionPane.showMessageDialog(null, "Added Yellow Noodles Normal size 40 bath");
+                                                                for(int i=0;bowls>i;i++){
+                                                                    nd.put(301+i, "Yellow Noodles Normal size");
+                                                                    count++;
+                                                                }
+                                                                money.remove(40*bowls);
+                                                                JOptionPane.showMessageDialog(null, "Added Yellow Noodles Normal size "+bowls+" bowls");
                                                                 break;
                                                             case 2:
-                                                                nd.put("103", "Yellow Noodles Big size :50 bath");
-                                                                money.remove(50);
-                                                                JOptionPane.showMessageDialog(null, "Added Yellow Noodles Big size 50 bath");
+                                                                for(int i=0;bowls>i;i++){
+                                                                    nd.put(311+i, "Yellow Noodles Big size");
+                                                                    count++;
+                                                                }
+                                                                money.remove(50*bowls);
+                                                                JOptionPane.showMessageDialog(null, "Added Yellow Noodles Big size "+bowls+" bowls");
                                                                 break;
                                                         }
                                                     }catch (Exception e){
@@ -136,6 +153,7 @@ public class DriverTest{
                                                     }
                                                 }
                                                 System.out.println("Your money now: "+money.getBath());
+                                                
                                                 break;
                         
                         
@@ -145,20 +163,26 @@ public class DriverTest{
                                                     break;
                                                 }else{
                                                     try{
-                                                        choice2 = JOptionPane.showInputDialog(null, 
+                                                        ch2 = Integer.parseInt(JOptionPane.showInputDialog(null, 
                                                                 "1.Normal size\n" +
-                                                                "2.Big size\n");
-                                                        ch2 = Integer.parseInt(choice2);
+                                                                "2.Big size\n"));    
+                                                        bowls = Integer.parseInt(JOptionPane.showInputDialog(null,"How many bowls of noodles do you want?"));                                                 
                                                         switch(ch2){
                                                             case 1:
-                                                                nd.put("004", "White rice noodles Normal size :40 bath");
-                                                                money.remove(40);
-                                                                JOptionPane.showMessageDialog(null, "Added Yellow Noodles Normal size 40 bath");
+                                                                for(int i=0;bowls>i;i++){
+                                                                    nd.put(401+i, "White rice noodles Normal size");
+                                                                    count++;
+                                                                }
+                                                                money.remove(40*bowls);
+                                                                JOptionPane.showMessageDialog(null, "Added White rice noodles Normal size "+bowls+" bowls");
                                                                 break;
                                                             case 2:
-                                                                nd.put("104", "White rice noodles Big size :50 bath");
-                                                                money.remove(50);
-                                                                JOptionPane.showMessageDialog(null, "Added Yellow Noodles Big size 50 bath");
+                                                                for(int i=0;bowls>i;i++){
+                                                                    nd.put(411+i, "White rice noodles Big size");
+                                                                    count++;
+                                                                }
+                                                                money.remove(50*bowls);
+                                                                JOptionPane.showMessageDialog(null, "Added White rice noodles Big size "+bowls+" bowls");
                                                                 break;
                                                         }
                                                     }catch (Exception e){
@@ -166,6 +190,7 @@ public class DriverTest{
                                                     }
                                                 }
                                                 System.out.println("Your money now: "+money.getBath());
+                                                
                                                 break;
                                                 
                                             case 5:
@@ -181,13 +206,15 @@ public class DriverTest{
                                 
                                 break;
                         case 2:
+                                count = 0;
                                 nd.clear();
                                 money.setBath(budget);
-                                JOptionPane.showMessageDialog(null,"All items are removed");
+                                JOptionPane.showMessageDialog(null,"All items are removed and your money is back to your budget");
                                 System.out.println(money.getBath());
                                 break;
                         
                         case 3:
+                                count = 0;
                                 budget = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter your budget"));
                                 money.setBath(budget);
                                 //int nbudget = Integer.parseInt(JOptionPane.showInputDialog("Enter your new budget"));
@@ -197,84 +224,26 @@ public class DriverTest{
                                 break;
 
                         case 4:
-                                for (String i: nd.keySet()) {
-                                    String key = i.toString();
-                                    String value = nd.get(i).toString();
-                                    System.out.println("["+key+"]" + " " + value);
+                                System.out.println("******************************************************************");
+                                System.out.println("                               Order");
+                                for (Map.Entry<Integer, String> i : nd.entrySet()) {
+                                    System.out.println("["+i.getKey()+"]" + " " + i.getValue());
                                 }
+
                                 int a = budget - (int)money.getBath(); //TOTAL PRICE
-                                    System.out.println("Total: " + a);
+                                    System.out.println("------------------------------------------------------------------");
+                                    System.out.println("Total item: "+count);
+                                    System.out.println("Total price: " + a);
                                     System.out.println("Your budget: " + budget);
                                     System.out.println("Your money: " + money.getBath());
+                                    System.out.println("------------------------------------------------------------------");
+                                    System.out.println("Thank you for using our service");
+                                    System.out.println("******************************************************************");
                                 // for (String i : nd.values()) {
                                 //     System.out.println(i);
                                 // }
                                 break;
-
                         case 5:
-                                try{
-                                    rmchoice = JOptionPane.showInputDialog(null,
-                                            "----------------------------------------------------------------\n" +
-                                            "                     Order you want to remove          \n" +
-                                            "----------------------------------------------------------------\n" +
-                                            "1. Narrow rice noodles Normal size\n" +
-                                            "2. Wide rice noodles Normal size\n" +  
-                                            "3. Yellow Noodles Normal size\n" +    
-                                            "4. White rice noodles Normal size\n" +
-                                            "5. Narrow rice noodles Big size\n" +
-                                            "6. Wide rice noodles Big size\n" +
-                                            "7. Yellow Noodles Big size\n" +
-                                            "8. White rice noodles Big size\n" +
-                                            "9. Back\n" +
-                                            "----------------------------------------------------------------\n");
-                                        
-                                    rm = Integer.parseInt(rmchoice);
-                                    switch (rm) {
-                                        case 1:
-                                            nd.remove("001");
-                                            money.add(40);
-                                            break;
-                                        case 2:
-                                            nd.remove("002");
-                                            money.add(40);
-                                            break;
-                                        case 3:
-                                            nd.remove("003");
-                                            money.add(40);
-                                            break;
-                                        case 4:
-                                            nd.remove("004");
-                                            money.add(40);
-                                            break;
-                                        case 5:
-                                            nd.remove("101");
-                                            money.add(50);
-                                            break;
-                                        case 6:
-                                            nd.remove("102");
-                                            money.add(50);
-                                            break;
-                                        case 7:
-                                            nd.remove("103");
-                                            money.add(50);
-                                            break;
-                                        case 8:
-                                            nd.remove("104");
-                                            money.add(50);
-                                            break;
-                                        case 9:
-                                            break;
-
-                                        default:
-                                            JOptionPane.showMessageDialog(null,"Invalid choice","Error",JOptionPane.ERROR_MESSAGE);
-                                            break;
-                                    }   
-                                }catch(Exception e){
-                                    JOptionPane.showMessageDialog(null,e.getMessage());
-                                }
-                                break;  
-
-                        case 6:
                                 JOptionPane.showMessageDialog(null,"Enjoy your food");
                                 break;
                     }
