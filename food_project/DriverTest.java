@@ -1,11 +1,9 @@
 package food_project;
 
 import javax.swing.JOptionPane;
-import java.util.HashMap;
-// import java.util.ArrayList;
-import java.util.Map;
 
-//key = 1:1:1 = ลําดับเมนู:size(Normal=0,Big=1):จํานวนชาม
+
+//key = 1:1:1 = ลําดับเมนู:size(Normal=0,Big=1):จํานวนชาม;
 public class DriverTest{
     public static void main(String[] args) throws Exception{
 
@@ -14,7 +12,7 @@ public class DriverTest{
         int count=0;
 
         // ArrayList<String> menu = new ArrayList<String>();
-        HashMap<Integer, String> nd = new HashMap<Integer, String>();
+        MyHashMap<Integer, String> nd = new MyHashMap<Integer, String>();
         Money money = new Money();
 
         budget = Integer.parseInt(JOptionPane.showInputDialog("Enter your budget"));
@@ -226,22 +224,21 @@ public class DriverTest{
                         case 4:
                                 System.out.println("******************************************************************");
                                 System.out.println("                               Order");
-                                for (Map.Entry<Integer, String> i : nd.entrySet()) {
-                                    System.out.println("["+i.getKey()+"]" + " " + i.getValue());
+
+                                for (String i : nd.values()) {
+                                    System.out.println(i);
                                 }
 
                                 int a = budget - (int)money.getBath(); //TOTAL PRICE
                                     System.out.println("------------------------------------------------------------------");
-                                    System.out.println("Total item: "+count);
+                                    System.out.println("Total item: "+nd.size());
                                     System.out.println("Total price: " + a);
                                     System.out.println("Your budget: " + budget);
                                     System.out.println("Your money: " + money.getBath());
                                     System.out.println("------------------------------------------------------------------");
                                     System.out.println("Thank you for using our service");
                                     System.out.println("******************************************************************");
-                                // for (String i : nd.values()) {
-                                //     System.out.println(i);
-                                // }
+                                
                                 break;
                         case 5:
                                 JOptionPane.showMessageDialog(null,"Enjoy your food");
