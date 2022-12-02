@@ -222,10 +222,23 @@ public class DriverTest{
                                 break;
 
                         case 4:
-                                System.out.println("******************************************************************");
-                                System.out.println("                               Order");
                                 
-
+                                // int a = budget - (int)money.getBath(); //TOTAL PRICE
+                                // JOptionPane.showMessageDialog(null,"******************************************************************\n"+
+                                // "                                        Order\n"+
+                                // nd.entrySet()+"\n"+
+                                // "                  Total item:               "+nd.size()+" Bowls\n"+
+                                // "                  Total price:              "+a+" Bath\n"+
+                                // "                  Your budget:           "+budget+" Bath\n"+
+                                // "                  Your money now:    "+money.getBath()+" Bath\n"+
+                                // "------------------------------------------------------------------------------\n"+
+                                // "                  Thank you for using our service\n"+
+                                // "******************************************************************");
+                                System.out.println("\n");
+                                System.out.println("******************************************************************");
+                                System.out.println("                               Order\n");
+                                
+ 
                                 for (Integer i: nd.keySet()) {
                                     String key = i.toString();
                                     String value = nd.get(i).toString();
