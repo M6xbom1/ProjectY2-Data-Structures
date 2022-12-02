@@ -5,6 +5,8 @@ import java.util.HashMap;
 
 
 //key = 1:1:1 = ลําดับเมนู:size(Normal=0,Big=1):จํานวนชาม;
+
+
 public class DriverTest{
     public static void main(String[] args) throws Exception{
 
@@ -224,8 +226,10 @@ public class DriverTest{
                                 System.out.println("                               Order");
                                 
 
-                                for (String i : nd.values()) {
-                                    System.out.println(nd.keySet()+" "+ i );
+                                for (Integer i: nd.keySet()) {
+                                    String key = i.toString();
+                                    String value = nd.get(i).toString();
+                                    System.out.println("["+key+"]" + " " + value);
                                 }
 
                                 int a = budget - (int)money.getBath(); //TOTAL PRICE
