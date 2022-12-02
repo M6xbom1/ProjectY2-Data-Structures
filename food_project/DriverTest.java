@@ -1,18 +1,18 @@
 package food_project;
 
 import javax.swing.JOptionPane;
+import java.util.HashMap;
 
 
 //key = 1:1:1 = ลําดับเมนู:size(Normal=0,Big=1):จํานวนชาม;
 public class DriverTest{
     public static void main(String[] args) throws Exception{
 
-        int ch=0,ch2=0,mch=0,rm=0,bowls=0;
+        int ch=0,ch2=0,mch=0,bowls=0;
         int budget=0;
-        int count=0;
 
         // ArrayList<String> menu = new ArrayList<String>();
-        MyHashMap<Integer, String> nd = new MyHashMap<Integer, String>();
+        HashMap<Integer, String> nd = new HashMap<Integer, String>();
         Money money = new Money();
 
         budget = Integer.parseInt(JOptionPane.showInputDialog("Enter your budget"));
@@ -36,7 +36,7 @@ public class DriverTest{
                                                 "----------------------------------------------------------------\n" +
                                                 "                              Menu                              \n" +
                                                 "----------------------------------------------------------------\n" +
-                                                "1. Narrow rice noodles\n " +
+                                                "1. Narrow rice noodles\n" +
                                                 "2. Wide rice noodles\n" +  
                                                 "3. Yellow Noodles\n" +    
                                                 "4. White rice noodles\n" +
@@ -58,7 +58,7 @@ public class DriverTest{
                                                             case 1:
                                                                 for(int i=0;bowls>i;i++){
                                                                     nd.put(101+i, "Narrow rice noodles Normal size");
-                                                                    count++;
+                                                                    
                                                                 }
                                                                 money.remove(40*bowls);
                                                                 JOptionPane.showMessageDialog(null, "Added narrow rice noodles Normal size "+bowls+" bowls");
@@ -66,7 +66,7 @@ public class DriverTest{
                                                             case 2:
                                                                 for(int i=0;bowls>i;i++){
                                                                     nd.put(111+i, "Narrow rice noodles Big size");
-                                                                    count++;
+                                                                    
                                                                 }
                                                                 money.remove(50*bowls);
                                                                 JOptionPane.showMessageDialog(null, "Added narrow rice noodles Big size "+bowls+" bowls");
@@ -95,7 +95,7 @@ public class DriverTest{
                                                             case 1:
                                                                 for(int i=0;bowls>i;i++){
                                                                     nd.put(201+i, "Wide rice noodles Normal size");
-                                                                    count++;
+                                                                    
                                                                 }
                                                                 money.remove(40*bowls);
                                                                 JOptionPane.showMessageDialog(null, "Added Wide rice noodles Normal size "+bowls+" bowls");
@@ -103,7 +103,7 @@ public class DriverTest{
                                                             case 2:
                                                                 for(int i=0;bowls>i;i++){
                                                                     nd.put(211+i, "Wide rice noodles Big size");
-                                                                    count++;
+                                                                    
                                                                 }
                                                                 money.remove(50*bowls);
                                                                 JOptionPane.showMessageDialog(null, "Added Wide rice noodles Big size "+bowls+" bowls");
@@ -132,7 +132,7 @@ public class DriverTest{
                                                             case 1:
                                                                 for(int i=0;bowls>i;i++){
                                                                     nd.put(301+i, "Yellow Noodles Normal size");
-                                                                    count++;
+                                                                    
                                                                 }
                                                                 money.remove(40*bowls);
                                                                 JOptionPane.showMessageDialog(null, "Added Yellow Noodles Normal size "+bowls+" bowls");
@@ -140,7 +140,7 @@ public class DriverTest{
                                                             case 2:
                                                                 for(int i=0;bowls>i;i++){
                                                                     nd.put(311+i, "Yellow Noodles Big size");
-                                                                    count++;
+                                                                    
                                                                 }
                                                                 money.remove(50*bowls);
                                                                 JOptionPane.showMessageDialog(null, "Added Yellow Noodles Big size "+bowls+" bowls");
@@ -169,7 +169,7 @@ public class DriverTest{
                                                             case 1:
                                                                 for(int i=0;bowls>i;i++){
                                                                     nd.put(401+i, "White rice noodles Normal size");
-                                                                    count++;
+                                                                    
                                                                 }
                                                                 money.remove(40*bowls);
                                                                 JOptionPane.showMessageDialog(null, "Added White rice noodles Normal size "+bowls+" bowls");
@@ -177,7 +177,7 @@ public class DriverTest{
                                                             case 2:
                                                                 for(int i=0;bowls>i;i++){
                                                                     nd.put(411+i, "White rice noodles Big size");
-                                                                    count++;
+                                                                    
                                                                 }
                                                                 money.remove(50*bowls);
                                                                 JOptionPane.showMessageDialog(null, "Added White rice noodles Big size "+bowls+" bowls");
@@ -204,7 +204,7 @@ public class DriverTest{
                                 
                                 break;
                         case 2:
-                                count = 0;
+                                
                                 nd.clear();
                                 money.setBath(budget);
                                 JOptionPane.showMessageDialog(null,"All items are removed and your money is back to your budget");
@@ -212,11 +212,9 @@ public class DriverTest{
                                 break;
                         
                         case 3:
-                                count = 0;
+                                
                                 budget = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter your budget"));
                                 money.setBath(budget);
-                                //int nbudget = Integer.parseInt(JOptionPane.showInputDialog("Enter your new budget"));
-                                //budget = money.add(nbudget);
                                 JOptionPane.showMessageDialog(null,"Your new budget is " + money.getBath());
                                 nd.clear();
                                 break;
@@ -224,9 +222,10 @@ public class DriverTest{
                         case 4:
                                 System.out.println("******************************************************************");
                                 System.out.println("                               Order");
+                                
 
                                 for (String i : nd.values()) {
-                                    System.out.println(i);
+                                    System.out.println(nd.keySet()+" "+ i );
                                 }
 
                                 int a = budget - (int)money.getBath(); //TOTAL PRICE
@@ -242,6 +241,10 @@ public class DriverTest{
                                 break;
                         case 5:
                                 JOptionPane.showMessageDialog(null,"Enjoy your food");
+                                break;
+
+                        default:
+                                JOptionPane.showMessageDialog(null,"Invalid choice","Error",JOptionPane.ERROR_MESSAGE);
                                 break;
                     }
             }catch(Exception e){
