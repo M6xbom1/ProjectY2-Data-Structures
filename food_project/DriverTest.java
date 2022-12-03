@@ -58,18 +58,12 @@ public class DriverTest{
                                                         bowls = Integer.parseInt(JOptionPane.showInputDialog(null,"How many bowls of noodles do you want?"));                                                 
                                                         switch(ch2){
                                                             case 1:
-                                                                for(int i=0;bowls>i;i++){
-                                                                    nd.put(101+i, "Narrow rice noodles Normal size");
-                                                                    
-                                                                }
+                                                                nd.put(100+bowls, "Narrow rice noodles Normal size");
                                                                 money.remove(40*bowls);
                                                                 JOptionPane.showMessageDialog(null, "Added narrow rice noodles Normal size "+bowls+" bowls");
                                                                 break;
                                                             case 2:
-                                                                for(int i=0;bowls>i;i++){
-                                                                    nd.put(111+i, "Narrow rice noodles Big size");
-                                                                    
-                                                                }
+                                                                nd.put(110+bowls, "Narrow rice noodles Big size");
                                                                 money.remove(50*bowls);
                                                                 JOptionPane.showMessageDialog(null, "Added narrow rice noodles Big size "+bowls+" bowls");
                                                                 break;
@@ -95,18 +89,12 @@ public class DriverTest{
                                                         bowls = Integer.parseInt(JOptionPane.showInputDialog(null,"How many bowls of noodles do you want?"));                                                 
                                                         switch(ch2){
                                                             case 1:
-                                                                for(int i=0;bowls>i;i++){
-                                                                    nd.put(201+i, "Wide rice noodles Normal size");
-                                                                    
-                                                                }
+                                                                nd.put(200+bowls, "Wide rice noodles Normal size");
                                                                 money.remove(40*bowls);
                                                                 JOptionPane.showMessageDialog(null, "Added Wide rice noodles Normal size "+bowls+" bowls");
                                                                 break;
                                                             case 2:
-                                                                for(int i=0;bowls>i;i++){
-                                                                    nd.put(211+i, "Wide rice noodles Big size");
-                                                                    
-                                                                }
+                                                                nd.put(210+bowls, "Wide rice noodles Big size");
                                                                 money.remove(50*bowls);
                                                                 JOptionPane.showMessageDialog(null, "Added Wide rice noodles Big size "+bowls+" bowls");
                                                                 break;
@@ -132,18 +120,12 @@ public class DriverTest{
                                                         bowls = Integer.parseInt(JOptionPane.showInputDialog(null,"How many bowls of noodles do you want?"));                                                 
                                                         switch(ch2){
                                                             case 1:
-                                                                for(int i=0;bowls>i;i++){
-                                                                    nd.put(301+i, "Yellow Noodles Normal size");
-                                                                    
-                                                                }
+                                                                nd.put(300+bowls, "Yellow Noodles Normal size");
                                                                 money.remove(40*bowls);
                                                                 JOptionPane.showMessageDialog(null, "Added Yellow Noodles Normal size "+bowls+" bowls");
                                                                 break;
                                                             case 2:
-                                                                for(int i=0;bowls>i;i++){
-                                                                    nd.put(311+i, "Yellow Noodles Big size");
-                                                                    
-                                                                }
+                                                                nd.put(310+bowls, "Yellow Noodles Big size");
                                                                 money.remove(50*bowls);
                                                                 JOptionPane.showMessageDialog(null, "Added Yellow Noodles Big size "+bowls+" bowls");
                                                                 break;
@@ -169,18 +151,12 @@ public class DriverTest{
                                                         bowls = Integer.parseInt(JOptionPane.showInputDialog(null,"How many bowls of noodles do you want?"));                                                 
                                                         switch(ch2){
                                                             case 1:
-                                                                for(int i=0;bowls>i;i++){
-                                                                    nd.put(401+i, "White rice noodles Normal size");
-                                                                    
-                                                                }
+                                                                nd.put(400+bowls, "White rice noodles Normal size");
                                                                 money.remove(40*bowls);
                                                                 JOptionPane.showMessageDialog(null, "Added White rice noodles Normal size "+bowls+" bowls");
                                                                 break;
                                                             case 2:
-                                                                for(int i=0;bowls>i;i++){
-                                                                    nd.put(411+i, "White rice noodles Big size");
-                                                                    
-                                                                }
+                                                                nd.put(410+bowls, "White rice noodles Big size");
                                                                 money.remove(50*bowls);
                                                                 JOptionPane.showMessageDialog(null, "Added White rice noodles Big size "+bowls+" bowls");
                                                                 break;
@@ -227,7 +203,6 @@ public class DriverTest{
                                 // JOptionPane.showMessageDialog(null,"******************************************************************\n"+
                                 // "                                        Order\n"+
                                 // nd.entrySet()+"\n"+
-                                // "                  Total item:               "+nd.size()+" Bowls\n"+
                                 // "                  Total price:              "+a+" Bath\n"+
                                 // "                  Your budget:           "+budget+" Bath\n"+
                                 // "                  Your money now:    "+money.getBath()+" Bath\n"+
@@ -242,12 +217,11 @@ public class DriverTest{
                                 for (Integer i: nd.keySet()) {
                                     String key = i.toString();
                                     String value = nd.get(i).toString();
-                                    System.out.println("["+key+"]" + " " + value);
+                                    System.out.println("["+key+"]" + " " + value + " " + key.substring(2) + " bowls");
                                 }
 
                                 int a = budget - (int)money.getBath(); //TOTAL PRICE
                                     System.out.println("------------------------------------------------------------------");
-                                    System.out.println("Total item: "+nd.size());
                                     System.out.println("Total price: " + a);
                                     System.out.println("Your budget: " + budget);
                                     System.out.println("Your money: " + money.getBath());
