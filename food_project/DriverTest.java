@@ -48,7 +48,7 @@ public class DriverTest{
                                         switch (ch) {
                                             case 1:
                                                 if(m < 40){
-                                                    JOptionPane.showMessageDialog(null, "Not enough money please update your budget");
+                                                    JOptionPane.showMessageDialog(null, "Not enough money");
                                                     break;
                                                 }else{
                                                     try{
@@ -79,7 +79,7 @@ public class DriverTest{
                         
                                             case 2:
                                                 if(m < 40){
-                                                    JOptionPane.showMessageDialog(null, "Not enough money please update your budget");
+                                                    JOptionPane.showMessageDialog(null, "Not enough money");
                                                     break;
                                                 }else{
                                                     try{
@@ -110,7 +110,7 @@ public class DriverTest{
                         
                                             case 3:
                                                 if(m < 40){
-                                                    JOptionPane.showMessageDialog(null, "Not enough money please update your budget");
+                                                    JOptionPane.showMessageDialog(null, "Not enough money");
                                                     break;
                                                 }else{
                                                     try{
@@ -141,7 +141,7 @@ public class DriverTest{
                         
                                             case 4:
                                                 if(m < 40){
-                                                    JOptionPane.showMessageDialog(null, "Not enough money please update your budget");
+                                                    JOptionPane.showMessageDialog(null, "Not enough money");
                                                     break;
                                                 }else{
                                                     try{
