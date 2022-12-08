@@ -38,10 +38,10 @@ public class DriverTest{
                                                 "----------------------------------------------------------------\n" +
                                                 "                              Menu                              \n" +
                                                 "----------------------------------------------------------------\n" +
-                                                "1. Narrow rice noodles\n" +
-                                                "2. Wide rice noodles\n" +  
-                                                "3. Yellow Noodles\n" +    
-                                                "4. White rice noodles\n" +
+                                                "1. Thin rice noodles\n" +
+                                                "2. Big flat noodles\n" +  
+                                                "3. Egg noodles\n" +    
+                                                "4. Vermicelli noodles\n" +
                                                 "----------------------------------------------------------------\n"));
                                         
                                         int m = (int) money.getBath();
@@ -58,14 +58,14 @@ public class DriverTest{
                                                         bowls = Integer.parseInt(JOptionPane.showInputDialog(null,"How many bowls of noodles do you want?"));                                                 
                                                         switch(ch2){
                                                             case 1:
-                                                                nd.put(100+bowls, "Narrow rice noodles Normal size");
+                                                                nd.put(100+bowls, "Thin rice noodles Normal size");
                                                                 money.remove(40*bowls);
-                                                                JOptionPane.showMessageDialog(null, "Added narrow rice noodles Normal size "+bowls+" bowls");
+                                                                JOptionPane.showMessageDialog(null, "Added Thin rice noodles Normal size "+bowls+" bowls");
                                                                 break;
                                                             case 2:
-                                                                nd.put(110+bowls, "Narrow rice noodles Big size");
+                                                                nd.put(110+bowls, "Thin rice noodles Big size");
                                                                 money.remove(50*bowls);
-                                                                JOptionPane.showMessageDialog(null, "Added narrow rice noodles Big size "+bowls+" bowls");
+                                                                JOptionPane.showMessageDialog(null, "Added Thin rice noodles Big size "+bowls+" bowls");
                                                                 break;
                                                         }
                                                     }catch (Exception e){
@@ -89,14 +89,14 @@ public class DriverTest{
                                                         bowls = Integer.parseInt(JOptionPane.showInputDialog(null,"How many bowls of noodles do you want?"));                                                 
                                                         switch(ch2){
                                                             case 1:
-                                                                nd.put(200+bowls, "Wide rice noodles Normal size");
+                                                                nd.put(200+bowls, "Big flat noodles Normal size");
                                                                 money.remove(40*bowls);
-                                                                JOptionPane.showMessageDialog(null, "Added Wide rice noodles Normal size "+bowls+" bowls");
+                                                                JOptionPane.showMessageDialog(null, "Added Big flat noodles Normal size "+bowls+" bowls");
                                                                 break;
                                                             case 2:
-                                                                nd.put(210+bowls, "Wide rice noodles Big size");
+                                                                nd.put(210+bowls, "Big flat noodles Big size");
                                                                 money.remove(50*bowls);
-                                                                JOptionPane.showMessageDialog(null, "Added Wide rice noodles Big size "+bowls+" bowls");
+                                                                JOptionPane.showMessageDialog(null, "Added Big flat noodles Big size "+bowls+" bowls");
                                                                 break;
                                                         }
                                                     }catch (Exception e){
@@ -120,14 +120,14 @@ public class DriverTest{
                                                         bowls = Integer.parseInt(JOptionPane.showInputDialog(null,"How many bowls of noodles do you want?"));                                                 
                                                         switch(ch2){
                                                             case 1:
-                                                                nd.put(300+bowls, "Yellow Noodles Normal size");
+                                                                nd.put(300+bowls, "Egg noodles Normal size");
                                                                 money.remove(40*bowls);
-                                                                JOptionPane.showMessageDialog(null, "Added Yellow Noodles Normal size "+bowls+" bowls");
+                                                                JOptionPane.showMessageDialog(null, "Added Egg noodles Normal size "+bowls+" bowls");
                                                                 break;
                                                             case 2:
-                                                                nd.put(310+bowls, "Yellow Noodles Big size");
+                                                                nd.put(310+bowls, "Egg noodles Big size");
                                                                 money.remove(50*bowls);
-                                                                JOptionPane.showMessageDialog(null, "Added Yellow Noodles Big size "+bowls+" bowls");
+                                                                JOptionPane.showMessageDialog(null, "Added Egg noodles Big size "+bowls+" bowls");
                                                                 break;
                                                         }
                                                     }catch (Exception e){
@@ -151,14 +151,14 @@ public class DriverTest{
                                                         bowls = Integer.parseInt(JOptionPane.showInputDialog(null,"How many bowls of noodles do you want?"));                                                 
                                                         switch(ch2){
                                                             case 1:
-                                                                nd.put(400+bowls, "White rice noodles Normal size");
+                                                                nd.put(400+bowls, "Vermicelli noodles Normal size");
                                                                 money.remove(40*bowls);
-                                                                JOptionPane.showMessageDialog(null, "Added White rice noodles Normal size "+bowls+" bowls");
+                                                                JOptionPane.showMessageDialog(null, "Added Vermicelli noodles Normal size "+bowls+" bowls");
                                                                 break;
                                                             case 2:
-                                                                nd.put(410+bowls, "White rice noodles Big size");
+                                                                nd.put(410+bowls, "Vermicelli noodles Big size");
                                                                 money.remove(50*bowls);
-                                                                JOptionPane.showMessageDialog(null, "Added White rice noodles Big size "+bowls+" bowls");
+                                                                JOptionPane.showMessageDialog(null, "Added Vermicelli noodles Big size "+bowls+" bowls");
                                                                 break;
                                                         }
                                                     }catch (Exception e){
