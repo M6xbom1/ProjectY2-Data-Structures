@@ -1,7 +1,7 @@
 package food_project;
 
-public class Money {
-
+public class Money implements MoneyADT {
+    
     private int bath;
 
     public Money(int bath) {
@@ -35,6 +35,6 @@ public class Money {
     public void remove(int bath) {
         this.bath -= bath;
     }
-
+    
 }
 
